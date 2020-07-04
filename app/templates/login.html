@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sign In</h1>
+<!-- action attribute of the form is used to
+     tell the browser the URL that should be used 
+     when submitting the information the user entered in the form -->
+<!-- The novalidate attribute is used to tell the web browser to not
+     apply validation to the fields in this form, which effectively 
+     leaves this task to the Flask application running in the server -->
+<form action="" method="post" novalidate>
+    <!-- generates a hidden field that includes a token that is 
+        used to protect the form against CSRF attacks. -->
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}<br>
+        {{ form.username(size=32) }}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}
+    </p>
+    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
