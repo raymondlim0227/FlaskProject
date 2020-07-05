@@ -13,4 +13,4 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login' # 'login' mean the name would use url_for() call to get the url
 
-from app import routes, models
+from app import routes, models, errors
