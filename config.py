@@ -11,3 +11,5 @@ class Config(object):
     # application every time a change is about 
     # to be made in the database.
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    POSTS_PER_PAGE = 3
