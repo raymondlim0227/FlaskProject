@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
 
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
@@ -18,6 +19,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login' # 'login' mean the name would use url_for() call to get the url
 bootstrap = Bootstrap(app)
+moment = Moment(app)
 
 
 if not app.debug:
